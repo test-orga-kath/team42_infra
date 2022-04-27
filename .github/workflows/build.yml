@@ -2,13 +2,14 @@ name: Build
 
 on:
   workflow_call:
-    secrets:
+    inputs:
       ruby_version:
         type: string
         required: true
       node_version:
         type: string
         required: true
+    secrets:
       bundle_github__com:
         required: false
 
@@ -22,10 +23,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ secrets.ruby_version }}
+          ruby-version: ${{ inputs.ruby_version }}
           bundler-cache: true
       - uses: actions/setup-node@v2
         with:
-          node-version: ${{ secrets.node_version }}
+          node-version: ${{ inputs.node_version }}
           cache: yarn
       - run: yarn install --production=false
