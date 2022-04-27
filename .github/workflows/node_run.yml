@@ -1,4 +1,4 @@
-name: Node Modules Install
+name: Node Run
 
 on:
   workflow_call:
@@ -15,7 +15,7 @@ on:
         default: yarn
 
 jobs:
-  node_modules_install_run:
+  node_run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
