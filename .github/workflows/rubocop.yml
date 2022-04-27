@@ -9,6 +9,9 @@ on:
       node_version:
         type: string
         required: true
+      cmd:
+        type: string
+        required: true
     secrets:
       bundle_github__com:
         required: false
@@ -25,4 +28,4 @@ jobs:
         with:
           ruby-version: 2.7.5
           bundler-cache: true
-      - run: bundle exec rubocop --config .rubocop.yml
+      - run: ${{ inputs.cmd }}
