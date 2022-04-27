@@ -9,11 +9,12 @@ on:
       node_version:
         type: string
         required: true
+    secrets:
       bundle_github__com:
-        type: string
+        required: false
 
 env:
-  BUNDLE_GITHUB__COM: ${{ inputs.bundle_github__com }}
+  BUNDLE_GITHUB__COM: ${{ secrets.bundle_github__com }}
 
 jobs:
   build:
