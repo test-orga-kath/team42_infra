@@ -9,6 +9,11 @@ on:
       node_version:
         type: string
         required: true
+      bundle_github__com:
+        type: string
+
+env:
+  BUNDLE_GITHUB__COM: ${{ inputs.bundle_github__com }}
 
 jobs:
   build:
