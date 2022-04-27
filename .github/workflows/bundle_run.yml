@@ -1,0 +1,28 @@
+name: Bundle_run
+
+on:
+  workflow_call:
+    inputs:
+      ruby_version:
+        type: string
+        required: true
+      cmd:
+        type: string
+        required: true
+    secrets:
+      bundle_github__com:
+        required: false
+
+env:
+  BUNDLE_GITHUB__COM: ${{ secrets.bundle_github__com }}
+
+jobs:
+  rubocop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ inputs.ruby_version }}
+          bundler-cache: true
+      - run: ${{ inputs.cmd }}
