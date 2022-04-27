@@ -1,12 +1,9 @@
-name: Rubocop
+name: Bundle_run
 
 on:
   workflow_call:
     inputs:
       ruby_version:
-        type: string
-        required: true
-      node_version:
         type: string
         required: true
       cmd:
@@ -26,6 +23,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.5
+          ruby-version: ${{ inputs.ruby_version }}
           bundler-cache: true
       - run: ${{ inputs.cmd }}
