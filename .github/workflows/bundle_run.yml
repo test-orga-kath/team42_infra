@@ -1,4 +1,4 @@
-name: Bundle_run
+name: Bundle Run
 
 on:
   workflow_call:
@@ -17,7 +17,7 @@ env:
   BUNDLE_GITHUB__COM: ${{ secrets.bundle_github__com }}
 
 jobs:
-  rubocop:
+  bundle_run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
