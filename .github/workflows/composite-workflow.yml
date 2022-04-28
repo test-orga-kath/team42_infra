@@ -12,6 +12,8 @@ on:
     secrets:
       bundle_github__com:
         required: false
+      dotenv_content:
+        required: false
 env:
   BUNDLE_GITHUB__COM: ${{ secrets.bundle_github__com }}
 
