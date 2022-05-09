@@ -24,7 +24,7 @@ jobs:
         with:
           node_version: ${{ inputs.node_version }}
           ruby_version: ${{ inputs.ruby_version }}
-          bundle_github__com: ${{ secrets.bundle_github__com }}
+          github_token: ${{ secrets.bundle_github__com }}
   eslint:
     runs-on: ubuntu-latest
     needs:
