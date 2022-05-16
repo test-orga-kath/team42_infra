@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build rails
-        uses: ePages-de/action-build-rails@master
+        uses: ePages-de/action-build-rails@v1
         with:
           node_version: ${{ inputs.node_version }}
           ruby_version: ${{ inputs.ruby_version }}
@@ -30,7 +30,7 @@ jobs:
     needs:
       - build
     steps:
-      - uses: ePages-de/action-node-run@master
+      - uses: ePages-de/action-node-run@v1
         with:
           node_version: ${{ inputs.node_version }}
           cmd: npx eslint app --ext .js
@@ -39,7 +39,7 @@ jobs:
     needs:
       - build
     steps:
-      - uses: ePages-de/action-node-run@master
+      - uses: ePages-de/action-node-run@v1
         with:
           node_version: ${{ inputs.node_version }}
           cmd: npx sass-lint -v -q
@@ -48,11 +48,11 @@ jobs:
     needs:
       - build
     steps:
-      - uses: ePages-de/action-ruby-run@master
+      - uses: ePages-de/action-ruby-run@v1
         with:
           ruby_version: ${{ inputs.ruby_version }}
           cmd: bundle exec rubocop --config .rubocop.yml
-  
+
   rspec:
     runs-on: ubuntu-latest
     needs:
