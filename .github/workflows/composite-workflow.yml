@@ -93,7 +93,7 @@ jobs:
       - run: yarn install --production=false
       - env:
           DOTENV_CONTENT: ${{ secrets.dotenv_content }}
-        run: echo $DOTENV_CONTENT | base64 -d > .env
+        run: echo $DOTENV_CONTENT | base64 -d > .env.test
       - run: sudo apt-get -y install libpq-dev
       - run: bundle exec rails db:create db:schema:load --trace
       - run: bundle exec rspec
