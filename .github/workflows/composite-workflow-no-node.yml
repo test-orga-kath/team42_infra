@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: build rails
-        uses: ePages-de/action-build-rails@v1
+        uses: ePages-de/action-build-rails@master
         with:
           ruby_version: ${{ inputs.ruby_version }}
           bundle_github__com: ${{ secrets.bundle_github__com }}
