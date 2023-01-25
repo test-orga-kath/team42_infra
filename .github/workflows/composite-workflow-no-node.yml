@@ -40,6 +40,7 @@ jobs:
       DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
       RAILS_ENV: test
       REDIS_URL: redis://localhost:6379/0
+      RAILS_MASTER_KEY: ${{ secrets.rails_master_key }}
     services:
       postgres:
         image: postgres
