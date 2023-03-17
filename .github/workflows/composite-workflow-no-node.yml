@@ -27,7 +27,7 @@ jobs:
     needs:
       - build
     steps:
-      - uses: ePages-de/action-ruby-run@v1
+      - uses: ePages-de/action-ruby-run@master
         with:
           ruby_version: ${{ inputs.ruby_version }}
           bundle_github__com: ${{ secrets.bundle_github__com }}
